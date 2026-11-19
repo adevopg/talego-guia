@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+/*
+ * The guide is dark, and only dark. It is read beside a game played in a dim
+ * prison, and a second theme would mean a second set of decisions about every
+ * contrast here for no reader who asked for one.
+ *
+ * The palette is concrete and rust: cold greys for the structure, one warm
+ * amber for anything the reader can act on, and red kept for danger — a level
+ * band, a thing the client cannot survive — so that it still means something
+ * when it appears.
+ */
+:root {
+  --ink: #0c0e10;
+  --ink-raised: #14181c;
+  --ink-sunken: #090a0c;
+  --panel: #171c21;
+  --line: #262d35;
+  --line-soft: #1d2329;
+
+  --text: #e6e9ec;
+  --text-dim: #9aa4ae;
+  --text-faint: #6b757f;
+
+  --amber: #e9a63c;
+  --amber-dim: #8a6321;
+  --rust: #c8643a;
+  --red: #d9544f;
+  --green: #61b47c;
+  --blue: #5f95c8;
+  --violet: #9b7fc4;
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-ink-raised: var(--ink-raised);
+  --color-ink-sunken: var(--ink-sunken);
+  --color-panel: var(--panel);
+  --color-line: var(--line);
+  --color-line-soft: var(--line-soft);
+  --color-text: var(--text);
+  --color-dim: var(--text-dim);
+  --color-faint: var(--text-faint);
+  --color-amber: var(--amber);
+  --color-amber-dim: var(--amber-dim);
+  --color-rust: var(--rust);
+  --color-red: var(--red);
+  --color-green: var(--green);
+  --color-blue: var(--blue);
+  --color-violet: var(--violet);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background:
+    radial-gradient(
+      1200px 600px at 50% -240px,
+      color-mix(in oklab, var(--amber) 6%, transparent),
+      transparent
+    ),
+    var(--ink);
+  color: var(--text);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+/* One focus ring, so keyboard use is never a guess. */
+*:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--amber) 35%, transparent);
+}
+
+/* A scrollbar that does not punch a white hole in a dark page. */
+* {
+  scrollbar-color: var(--line) transparent;
+  scrollbar-width: thin;
+}
+
+/*
+ * Numbers line up in a table only if their glyphs are the same width, and every
+ * figure in this guide is a quantity being compared with the one above it.
+ */
+.tnum {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
