@@ -187,3 +187,15 @@ por fichero, y `.gitignore` deja fuera cualquier `.env`.
   venta; los vendedores se localizan por los NPCs que los llevan.
 - Solo 267 de los 2 874 NPCs están colocados en alguna sala. La guía lo dice en
   cada ficha en lugar de disimularlo.
+
+## Licencia
+
+[MIT](LICENSE). Cógelo, cámbialo, úsalo en lo que quieras, cóbralo si te
+apetece: la única condición es que el aviso de copyright viaje con la copia.
+Sin garantía de nada, que es la otra mitad del trato.
+
+Eso cubre **el código de este repositorio**. No cubre el juego: los objetos,
+los NPCs, los nombres, los iconos y los fondos que `scripts/export.sh` saca de
+tu copia de La Prisión son de quien sean, y aquí no se distribuyen ni se
+licencian — por eso el repositorio trae el programa que los lee y no los datos
+que lee.
